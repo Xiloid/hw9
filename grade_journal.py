@@ -28,6 +28,7 @@ def main():
         s += int(s_point)
     sort_to_tuple = sorted(students.items(), key=lambda item: item[1], reverse=True)
     sort_to_dict = {k: v for k, v in sort_to_tuple}
+    print('Список студентов от лучших, к худшим:')
     for i, key in enumerate(sort_to_dict):
         print(str(i + 1)+'.', key)
 
