@@ -19,7 +19,17 @@
 
 
 def main():
-    pass
+    students = {}
+    n = int(input("Количество студентов: "))
+    s = 0
+    for i in range(n):
+        s_name, s_point = map(str, input('Введите фамилию и балл через пробел: ').split())
+        students[s_name] = int(s_point)
+        s += int(s_point)
+    sort_to_tuple = sorted(students.items(), key=lambda item: item[1], reverse=True)
+    sort_to_dict = {k: v for k, v in sort_to_tuple}
+    for i, key in enumerate(sort_to_dict):
+        print(str(i + 1)+'.', key)
 
 
 if __name__ == "__main__":
