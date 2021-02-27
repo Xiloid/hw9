@@ -25,7 +25,7 @@ def main():
     # available_sizes = sorted(list(map(int, input('Введите доступные размеры коньков через проблел: ').split())))
     # foot_sizes = sorted(list(map(int, input('Введите размеры ног посетителей через проблел: ').split())))
     result = skates(available_sizes, foot_sizes)
-    print(result)
+    print(f'{result} одновременно катающихся')
     error_test()
 
 
