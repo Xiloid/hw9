@@ -14,7 +14,10 @@ def time_decorator(func):
     def wrapped(*args):
         start_time = time.time()
         res = func(*args)
-        print(time.time() - start_time)
+        how_long = time.time() - start_time
+        print(f'Время выполнения функции: {how_long}')
+        if how_long > 5:
+            print(f'{func.__name__} - very slow function')
         return res
     return wrapped
 
@@ -27,11 +30,11 @@ def slow_decorator(func):
     return wrapped
 
 
-@slow_decorator
 @time_decorator
+@slow_decorator
 def func(first, second):
-    result = bin(int(first, 2) + int(second, 2))
+    result = int(first) + int(second)
     return result
 
 
-print(func("111", "0000"))
+print(func("57545585644457", "1754545445480"))
